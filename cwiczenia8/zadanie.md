@@ -16,7 +16,7 @@ Podział sieci
 -------------
 | sieć | adres |
 |:-----|:------|
-| LAN1 | 172.22.144.0/23 |
+| LAN1 | 172.22.160.0/23 |
 | LAN2 | 172.22.128.0/19 |
 
 PC0
@@ -24,14 +24,14 @@ PC0
 |  interfejs   | adres  |
 |:-------------| :------| 
 | eth0 | zapewnia usługodawca |
-| eth1 | 172.22.144.1/23  |
+| eth1 | 172.22.160.1/23  |
 | eth2 | 172.22.128.1/19  |
 
 PC1
 ---
 |  interfejs   | adres  |
 |:-------------| :------| 
-| eth0 | 172.22.144.2/23 |
+| eth0 | 172.22.160.2/23 |
 
 PC2
 ---
@@ -40,5 +40,12 @@ PC2
 | eth0 | 172.22.128.2/19 |
 
 --------------
+Ustawienie adresów IP 
+ip addr add (adres) dev (interfejs) 
+Umożliwienie przekazywania adresów IP w PC0
+tymczasowo: 
+echo 1 > /proc/sys/net/ipv4/ip_forward
+na stałe: 
+sysctl -w net.ipv4.ip_forward=1
 
 
