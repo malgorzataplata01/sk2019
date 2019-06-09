@@ -42,10 +42,13 @@ PC2
 --------------
 Ustawienie adresów IP 
 ip addr add (adres) dev (interfejs) 
+---
 Umożliwienie przekazywania adresów IP w PC0
 tymczasowo: 
 echo 1 > /proc/sys/net/ipv4/ip_forward
+---
 na stałe: 
 sysctl -w net.ipv4.ip_forward=1
+---
 
 
