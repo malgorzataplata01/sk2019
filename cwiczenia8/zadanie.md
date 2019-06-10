@@ -41,14 +41,22 @@ PC2
 
 --------------
 Ustawienie adresów IP 
+---
 ip addr add (adres) dev (interfejs) 
----
 Umożliwienie przekazywania adresów IP w PC0
-tymczasowo: 
-echo 1 > /proc/sys/net/ipv4/ip_forward
 ---
-na stałe: 
-sysctl -w net.ipv4.ip_forward=1
+tymczasowo:  echo 1 > /proc/sys/net/ipv4/ip_forward ,  na stałe: sysctl -w net.ipv4.ip_forward=1
+
+Trasowanie - ustawienie trasy domyślnej dla PC1 i PC2 
 ---
+Ustawienie trasy domyślnej prowadzącej przez PC0 instrukcją : ip route add default via (adres interfejsu podłączonego do danej sieci w PC0) 
+Dodanie dns w PC1 i PC2 
+---
+wejście do pliku /etc/resolv.conf
+i dodanie nameserver 8.8.8.8
+
+Umożliwienie przekazywania internetu w PC0
+---
+iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
 
 
