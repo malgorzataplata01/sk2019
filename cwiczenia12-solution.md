@@ -1,16 +1,16 @@
---------------
+
 ## Rozwiązanie
--Podział sieci 188.156.226.160/27 na dwie podsieci: przeznaczoną na obsługę sal i przeznaczoną na obsługę wi-fi 
--Utworzenie sieci lokalnych LAN1 i LAN2 
+-Podział sieci 188.156.226.160/27 na dwie podsieci: przeznaczoną na obsługę sal i przeznaczoną na obsługę wi-fi
 -Serwer sale:
 * sale - 188.156.220.160/28
   * podsieć - 10.0.0.0/16
 -Serwer wi-fi:
 * WI-FI - 188.156.220.176/28
   * podsieć - 10.10.0.0/22
-Na każdym poziomie 140 komputerów, w sumie 420 komputerów. 
+---
+Utworzenie poszczególnych osobnych podsieci dla każdej sali, o następujących adresach: 
+---
 ### Poziom 0
-  *Poszczególne sale:
   * 009
     *  ``10.0.9.0/26``
   * 013
