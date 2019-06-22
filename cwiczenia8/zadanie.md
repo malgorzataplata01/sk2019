@@ -49,7 +49,10 @@ tymczasowo:  echo 1 > /proc/sys/net/ipv4/ip_forward ,  na stałe: sysctl -w net.
 
 Trasowanie - ustawienie trasy domyślnej dla PC1 i PC2 
 ---
+
 Ustawienie trasy domyślnej prowadzącej przez PC0 instrukcją : ip route add default via (adres interfejsu podłączonego do danej sieci w PC0) 
+
+
 Dodanie dns w PC1 i PC2 
 ---
 wejście do pliku /etc/resolv.conf
